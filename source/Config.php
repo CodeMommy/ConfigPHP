@@ -48,7 +48,7 @@ class Config
             $filePath .= '/' . $keys[$index];
             $file = self::$root . $filePath . '.php';
             if (is_file($file)) {
-                $config = require_once($file);
+                $config = require($file);
                 break;
             }
         }
