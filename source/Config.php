@@ -13,15 +13,19 @@ namespace CodeMommy\ConfigPHP;
  */
 class Config
 {
-    private static $root = './';
+    private static $root = '.';
 
     /**
      * Set Root
      *
      * @param string $root
      */
-    public static function setRoot($root = './')
+    public static function setRoot($root = '.')
     {
+        $root = str_replace('\\', '/', $root);
+        if (substr($root, -1) == '/') {
+            $root = substr($root, 0, -1);
+        }
         self::$root = $root;
     }
 
@@ -42,7 +46,7 @@ class Config
         $count = count($keys);
         for (; $index < $count; $index++) {
             $filePath .= '/' . $keys[$index];
-            $file = self::$root . substr($filePath, 1) . '.php';
+            $file = self::$root . $filePath . '.php';
             if (is_file($file)) {
                 $config = require_once($file);
                 break;
