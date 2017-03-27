@@ -20,9 +20,12 @@ class Config
      *
      * @param string $root
      */
-    public static function setRoot($root = '.')
+    public static function setRoot($root = '')
     {
         $root = str_replace('\\', '/', $root);
+        if (empty($root)) {
+            $root = '.';
+        }
         if (substr($root, -1) == '/') {
             $root = substr($root, 0, -1);
         }
