@@ -6,8 +6,7 @@
 [![Unstable](https://poser.pugx.org/CodeMommy/ConfigPHP/v/unstable?format=flat-square)](https://packagist.org/packages/CodeMommy/ConfigPHP)
 [![composer.lock Available](https://poser.pugx.org/CodeMommy/ConfigPHP/composerlock?format=flat-square)](https://packagist.org/packages/CodeMommy/ConfigPHP)
 
-
-> CodeMommy ConfigPHP is a config helper for web development.
+> Read config files easily
 
 Visit [CodeMommy Website](http://www.codemommy.com) or [Packagist](https://packagist.org/packages/CodeMommy/ConfigPHP) to get more information.
 

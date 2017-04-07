@@ -1,7 +1,7 @@
 {
   "name": "codemommy/configphp",
   "version": "0.0.4",
-  "description": "CodeMommy ConfigPHP is a config helper for web development.",
+  "description": "Read config files easily",
   "keywords": [
     "CodeMommy",
     "ConfigPHP",
