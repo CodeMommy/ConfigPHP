@@ -95,7 +95,7 @@ class Config
             }
         }
         for ($index += 1; $index < $count; $index++) {
-            if (!isset($config[$keys[$index]])) {
+            if (!is_array($config) || !isset($config[$keys[$index]])) {
                 return $default;
             }
             $config = $config[$keys[$index]];
