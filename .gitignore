@@ -1,6 +1,9 @@
-#IDE
+# IDE
 /.idea/
 
-#Composer
+# Composer
 /vendor/
 /composer.lock
+
+# Test
+/.report

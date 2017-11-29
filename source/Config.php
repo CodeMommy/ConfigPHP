@@ -2,10 +2,12 @@
 
 /**
  * CodeMommy ConfigPHP
- * @author  Candison November <www.kandisheng.com>
+ * @author Candison November <www.kandisheng.com>
  */
 
 namespace CodeMommy\ConfigPHP;
+
+use Symfony\Component\Yaml\Yaml;
 
 /**
  * Class Config
@@ -13,23 +15,57 @@ namespace CodeMommy\ConfigPHP;
  */
 class Config
 {
-    private static $root = '.';
+    /**
+     * @var array
+     */
+    private static $configDirectory = array();
 
     /**
-     * Set Root
-     *
-     * @param string $root
+     * @var array
      */
-    public static function setRoot($root = '')
+    private static $cache = array();
+
+    /**
+     * Config constructor.
+     */
+    public function __construct()
     {
-        $root = str_replace('\\', '/', $root);
-        if (empty($root)) {
-            $root = '.';
+    }
+
+    /**
+     * Parse File
+     * @param string $filePath
+     * @return mixed
+     */
+    private static function parseFile($filePath = '')
+    {
+        $supportFileType = array('php', 'yaml', 'yml');
+        foreach ($supportFileType as $value) {
+            $file = sprintf('%s.%s', $filePath, $value);
+            if (is_file($file)) {
+                if ($value == 'php') {
+                    return require($file);
+                }
+                if ($value == 'yaml' || $value == 'yml') {
+                    return Yaml::parse(file_get_contents($file));
+                }
+            }
         }
-        if (substr($root, -1) == '/') {
-            $root = substr($root, 0, -1);
-        }
-        self::$root = $root;
+        return null;
+    }
+
+    /**
+     * Add Directory
+     * @param string $directory
+     * @return bool
+     */
+    public static function addDirectory($directory = '.')
+    {
+        $directory = str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $directory);
+        $directory = rtrim($directory, '/\\');
+        $directory = empty($directory) ? '.' : $directory;
+        array_push(self::$configDirectory, $directory);
+        return true;
     }
 
     /**
@@ -42,17 +78,22 @@ class Config
      */
     public static function get($key, $default = null)
     {
+        if(isset(self::$cache[$key])){
+            return self::$cache[$key];
+        }
         $index = 0;
         $filePath = '';
         $config = null;
         $keys = explode('.', $key);
         $count = count($keys);
         for (; $index < $count; $index++) {
-            $filePath .= '/' . $keys[$index];
-            $file = self::$root . $filePath . '.php';
-            if (is_file($file)) {
-                $config = require($file);
-                break;
+            $filePath .= DIRECTORY_SEPARATOR . $keys[$index];
+            foreach (self::$configDirectory as $directory) {
+                $fileContent = self::parseFile($directory . $filePath);
+                $config = empty($fileContent) ? $config : $fileContent;
+                if (!empty($config)) {
+                    break 2;
+                }
             }
         }
         for ($index += 1; $index < $count; $index++) {
@@ -61,6 +102,7 @@ class Config
             }
             $config = $config[$keys[$index]];
         }
+        self::$cache[$key] = $config;
         return $config;
     }
 }
