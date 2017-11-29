@@ -70,15 +70,13 @@ class Config
 
     /**
      * Get
-     *
      * @param $key
      * @param mixed $default
-     *
      * @return mixed
      */
     public static function get($key, $default = null)
     {
-        if(isset(self::$cache[$key])){
+        if (isset(self::$cache[$key])) {
             return self::$cache[$key];
         }
         $index = 0;
