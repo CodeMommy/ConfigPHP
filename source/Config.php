@@ -69,6 +69,15 @@ class Config
     }
 
     /**
+     * Clear Cache
+     */
+    public static function clearCache()
+    {
+        self::$cache = array();
+        return true;
+    }
+
+    /**
      * Get
      * @param $key
      * @param mixed $default

@@ -45,9 +45,18 @@ class ConfigTest extends TestCase
      * Test Add Directory
      * @return void
      */
-    public function testSetDirectory()
+    public function testAddDirectory()
     {
         $this->assertEquals(Config::addDirectory($this->testDirectory), true);
+    }
+
+    /**
+     * Test Clear Cache
+     * @return void
+     */
+    public function testClearCache()
+    {
+        $this->assertEquals(Config::clearCache(), true);
     }
 
     /**
