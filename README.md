@@ -9,15 +9,14 @@
 
 > Read config files easily
 
-Visit [CodeMommy Website](http://www.codemommy.com) or [Packagist](https://packagist.org/packages/CodeMommy/ConfigPHP) to get more information.
+## Contributor
 
-## Authors
+- [Candison November](http://www.kandisheng.com) - Founder
 
-| Name | Identity | Social |
-| :--- | :------- | :----- |
-| Candison November | Founder  | [Website](http://www.kandisheng.com) - [GitHub](https://github.com/KanDisheng) |
+## Information
 
-## More
-
+- [Homepage](http://www.CodeMommy.com)
+- [GitHub](https://github.com/CodeMommy/ConfigPHP)
+- [Packagist](https://packagist.org/packages/CodeMommy/ConfigPHP)
 - [Feedback](https://github.com/CodeMommy/ConfigPHP/issues)
 - [About CodeMommy](https://github.com/CodeMommy/CodeMommy)
