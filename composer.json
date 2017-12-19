@@ -42,10 +42,10 @@
     },
     "scripts": {
         "clean": [
-            "CodeMommy\\ConfigPHP\\Script\\Command::cleanReport"
+            "CodeMommy\\ConfigPHP\\Script\\CleanReport::start"
         ],
         "test": [
-            "CodeMommy\\ConfigPHP\\Script\\Command::cleanReport",
+            "CodeMommy\\ConfigPHP\\Script\\CleanReport::start",
             "\"vendor/bin/phpunit\" -v",
             "start .report/index.html"
         ],
