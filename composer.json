@@ -41,18 +41,17 @@
         "phpunit/phpunit": "*"
     },
     "scripts": {
-        "clean": [
-            "CodeMommy\\ConfigPHP\\Script\\CleanReport::start"
-        ],
-        "test": [
-            "CodeMommy\\ConfigPHP\\Script\\CleanReport::start",
-            "\"vendor/bin/phpunit\" -v",
-            "start .report/index.html"
+        "environment": [
+            "composer -V",
+            "php -v",
+            "php -m"
         ],
         "update-project": [
             "git pull",
             "composer self-update",
             "composer update"
-        ]
+        ],
+        "test": "CodeMommy\\ConfigPHP\\Script\\Test::start",
+        "clean": "CodeMommy\\ConfigPHP\\Script\\Clean::start"
     }
 }
