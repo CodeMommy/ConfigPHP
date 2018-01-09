@@ -24,7 +24,10 @@
     ],
     "autoload": {
         "psr-4": {
-            "CodeMommy\\ConfigPHP\\": "source/"
+            "CodeMommy\\ConfigPHP\\": [
+                "interface/",
+                "source/"
+            ]
         }
     },
     "autoload-dev": {

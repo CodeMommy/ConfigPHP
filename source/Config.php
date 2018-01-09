@@ -13,14 +13,16 @@ use Symfony\Component\Yaml\Yaml;
  * Class Config
  * @package CodeMommy\ConfigPHP
  */
-class Config
+class Config implements ConfigInterface
 {
     /**
+     * Config Directory
      * @var array
      */
     private static $configDirectory = array();
 
     /**
+     * Cache
      * @var array
      */
     private static $cache = array();
