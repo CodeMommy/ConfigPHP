@@ -33,9 +33,9 @@ interface ConfigInterface
 
     /**
      * Get
-     * @param $key
-     * @param null $default
+     * @param string $key
+     * @param mixed $default
      * @return mixed
      */
-    public static function get($key, $default = null);
+    public static function get($key = '', $default = null);
 }

@@ -104,11 +104,11 @@ class Config implements ConfigInterface
 
     /**
      * Get
-     * @param $key
+     * @param string $key
      * @param mixed $default
      * @return mixed
      */
-    public static function get($key, $default = null)
+    public static function get($key = '', $default = null)
     {
         if (isset(self::$cache[$key])) {
             return self::$cache[$key];
