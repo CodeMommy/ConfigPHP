@@ -40,8 +40,10 @@
     },
     "require-dev": {
         "CodeMommy/TaskPHP": "*",
+        "symfony/yaml": "*",
         "phpunit/phpunit": "*",
-        "symfony/yaml": "*"
+        "phpmd/phpmd": "*",
+        "squizlabs/php_codesniffer": "*"
     },
     "suggest": {
         "php": "Required to support PHP file",
@@ -58,7 +60,19 @@
             "composer self-update",
             "composer update"
         ],
-        "test": "CodeMommy\\ConfigPHP\\Script\\Test::start",
+        "test": [
+            "composer phpunit",
+            "composer phpcs",
+            "composer phpmd"
+        ],
+        "phpcs": [
+            "\"vendor/bin/phpcs\" interface --standard=PSR2",
+            "\"vendor/bin/phpcs\" source --standard=PSR2",
+            "\"vendor/bin/phpcs\" script --standard=PSR2",
+            "\"vendor/bin/phpcs\" test --standard=PSR2"
+        ],
+        "phpmd": "\"vendor/bin/phpmd\" interface,source,script,test text cleancode,codesize,controversial,design,naming,unusedcode",
+        "phpunit": "CodeMommy\\ConfigPHP\\Script\\PHPUnit::start",
         "clean": "CodeMommy\\ConfigPHP\\Script\\Clean::start"
     }
 }
