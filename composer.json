@@ -44,6 +44,7 @@
         "symfony/yaml": "*"
     },
     "suggest": {
+        "php": "Required to support PHP file.",
         "symfony/yaml": "Required to support YAML file."
     },
     "scripts": {
