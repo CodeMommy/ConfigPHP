@@ -36,12 +36,15 @@
         }
     },
     "require": {
-        "php": ">=5.3.0",
-        "symfony/yaml": "*"
+        "php": ">=5.3.0"
     },
     "require-dev": {
         "CodeMommy/TaskPHP": "*",
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "*",
+        "symfony/yaml": "*"
+    },
+    "suggest": {
+        "symfony/yaml": "Required to support YAML file."
     },
     "scripts": {
         "environment": [

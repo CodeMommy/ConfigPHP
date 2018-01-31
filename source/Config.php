@@ -35,20 +35,43 @@ class Config implements ConfigInterface
     }
 
     /**
+     * Support File YAML
+     * @return array
+     */
+    private static function supportFileYAML()
+    {
+        if (class_exists('Symfony\\Component\\Yaml\\Yaml')) {
+            return array('yaml', 'yml');
+        }
+        return array();
+    }
+
+    /**
+     * Support File PHP
+     * @return array
+     */
+    private static function supportFilePHP()
+    {
+        return array('php');
+    }
+
+    /**
      * Parse File
      * @param string $filePath
      * @return mixed
      */
     private static function parseFile($filePath = '')
     {
-        $supportFileType = array('php', 'yaml', 'yml');
+        $supportFileType = array();
+        $supportFileType = array_merge($supportFileType, self::supportFilePHP());
+        $supportFileType = array_merge($supportFileType, self::supportFileYAML());
         foreach ($supportFileType as $value) {
             $file = sprintf('%s.%s', $filePath, $value);
             if (is_file($file)) {
-                if ($value == 'php') {
+                if (in_array($value, self::supportFilePHP())) {
                     return require($file);
                 }
-                if ($value == 'yaml' || $value == 'yml') {
+                if (in_array($value, self::supportFileYAML())) {
                     return Yaml::parse(file_get_contents($file));
                 }
             }

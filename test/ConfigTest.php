@@ -38,7 +38,7 @@ class ConfigTest extends TestCase
     public function testConstruct()
     {
         new Config();
-        $this->assertEquals(true, true);
+        $this->assertTrue(true);
     }
 
     /**
