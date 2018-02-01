@@ -6,7 +6,7 @@
  */
 
 $autoloaDirectory = array(
-    'source' => 'CodeMommy\\ConfigPHP',
+    'class' => 'CodeMommy\\ConfigPHP',
     'interface' => 'CodeMommy\\ConfigPHP'
 );
 
