@@ -9,7 +9,7 @@
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./interface</directory>
-            <directory suffix=".php">./source</directory>
+            <directory suffix=".php">./class</directory>
         </whitelist>
     </filter>
     <logging>

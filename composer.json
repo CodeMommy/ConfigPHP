@@ -25,15 +25,15 @@
     "autoload": {
         "psr-4": {
             "CodeMommy\\ConfigPHP\\": [
-                "interface/",
-                "source/"
+                "interface",
+                "class"
             ]
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "CodeMommy\\ConfigPHP\\Test\\": "test/",
-            "CodeMommy\\ConfigPHP\\Script\\": "script/"
+            "CodeMommy\\ConfigPHP\\Test\\": "test",
+            "CodeMommy\\ConfigPHP\\Script\\": "script"
         }
     },
     "require": {
@@ -68,9 +68,9 @@
             "composer phpcs",
             "composer phpmd"
         ],
-        "phpmd": "\"vendor/bin/phpmd\" autoload.php,interface,source,script,test,test_case text cleancode,codesize,controversial,design,naming,unusedcode",
-        "phpcs": "\"vendor/bin/phpcs\" autoload.php interface source script test test_case --standard=PSR2",
-        "phpcbf": "\"vendor/bin/phpcbf\" autoload.php interface source script test test_case --standard=PSR2",
+        "phpmd": "\"vendor/bin/phpmd\" autoload.php,interface,class,script,test,test_case text cleancode,codesize,controversial,design,naming,unusedcode",
+        "phpcs": "\"vendor/bin/phpcs\" autoload.php interface class script test test_case --standard=PSR2",
+        "phpcbf": "\"vendor/bin/phpcbf\" autoload.php interface class script test test_case --standard=PSR2",
         "phpunit": "CodeMommy\\ConfigPHP\\Script\\PHPUnit::start",
         "clean": "CodeMommy\\ConfigPHP\\Script\\Clean::start"
     }
