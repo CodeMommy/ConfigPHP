@@ -7,29 +7,22 @@
 
 declare(strict_types=1);
 
-namespace Test;
+namespace CodeMommy\ConfigPHP\Test;
 
-use PHPUnit\Framework\TestCase;
 use CodeMommy\ConfigPHP\Config;
 
 /**
  * Class ConfigTest
- * @package Test
+ * @package CodeMommy\ConfigPHP\Test
  */
-class ConfigTest extends TestCase
+class ConfigTest extends BaseTest
 {
-    /**
-     * @var string
-     */
-    private $testDirectory = '';
-
     /**
      * ConfigTest constructor.
      */
     public function __construct()
     {
         parent::__construct();
-        $this->testDirectory = sprintf('%s/case', __DIR__);
     }
 
     /**
@@ -47,7 +40,7 @@ class ConfigTest extends TestCase
      */
     public function testAddDirectory()
     {
-        $this->assertEquals(Config::addDirectory($this->testDirectory), true);
+        $this->assertEquals(Config::addDirectory($this->getTestCasePath()), true);
     }
 
     /**
@@ -65,7 +58,7 @@ class ConfigTest extends TestCase
      */
     public function testGetFromDirectory()
     {
-        Config::addDirectory($this->testDirectory);
+        Config::addDirectory($this->getTestCasePath());
         $this->assertEquals(Config::get('php.file.type'), 'php');
         $this->assertEquals(Config::get('demo.php.file.type'), 'php');
         $this->assertEquals(Config::get('yaml.file.type'), 'yaml');
