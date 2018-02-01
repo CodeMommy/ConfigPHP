@@ -43,7 +43,8 @@
         "symfony/yaml": "*",
         "phpunit/phpunit": "*",
         "phpmd/phpmd": "*",
-        "squizlabs/php_codesniffer": "*"
+        "squizlabs/php_codesniffer": "*",
+        "satooshi/php-coveralls": "*"
     },
     "suggest": {
         "php": "Required to support PHP file",

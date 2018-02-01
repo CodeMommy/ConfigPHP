@@ -6,6 +6,7 @@
 [![Unstable](https://poser.pugx.org/CodeMommy/ConfigPHP/v/unstable)](https://packagist.org/packages/CodeMommy/ConfigPHP)
 [![composer.lock Available](https://poser.pugx.org/CodeMommy/ConfigPHP/composerlock)](https://packagist.org/packages/CodeMommy/ConfigPHP)
 [![Build Status](https://travis-ci.org/CodeMommy/ConfigPHP.svg?branch=master)](https://travis-ci.org/CodeMommy/ConfigPHP)
+[![Coverage Status](https://coveralls.io/repos/github/CodeMommy/ConfigPHP/badge.svg?branch=master)](https://coveralls.io/github/CodeMommy/ConfigPHP?branch=master)
 
 > Read config files easily
 
