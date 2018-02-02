@@ -68,7 +68,10 @@
             "composer phpcs",
             "composer phpmd"
         ],
-        "phpmd": "\"vendor/bin/phpmd\" autoload.php,interface,class,script,test,test_case text cleancode,codesize,controversial,design,naming,unusedcode",
+        "phpmd": [
+            "CodeMommy\\ConfigPHP\\Script\\RemoveRule::start",
+            "\"vendor/bin/phpmd\" autoload.php,interface,class,script,test,test_case text cleancode,codesize,controversial,design,naming,unusedcode"
+        ],
         "phpcs": "\"vendor/bin/phpcs\" autoload.php interface class script test test_case --standard=PSR2",
         "phpcbf": "\"vendor/bin/phpcbf\" autoload.php interface class script test test_case --standard=PSR2",
         "phpunit": "CodeMommy\\ConfigPHP\\Script\\PHPUnit::start",
