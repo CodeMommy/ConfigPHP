@@ -40,12 +40,12 @@
         "php": ">=5.3.0"
     },
     "require-dev": {
-        "CodeMommy/TaskPHP": "*",
-        "symfony/yaml": "*",
-        "phpunit/phpunit": "*",
+        "phpunit/phpunit": "<7.0.0",
         "phpmd/phpmd": "*",
         "squizlabs/php_codesniffer": "*",
-        "satooshi/php-coveralls": "*"
+        "satooshi/php-coveralls": "*",
+        "CodeMommy/TaskPHP": "*",
+        "symfony/yaml": "*"
     },
     "suggest": {
         "php": "Required to support PHP file",
