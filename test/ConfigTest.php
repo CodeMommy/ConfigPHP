@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace CodeMommy\ConfigPHP\Test;
 
+use Exception;
 use CodeMommy\ConfigPHP\Config;
 
 /**
@@ -27,6 +28,7 @@ class ConfigTest extends BaseTest
 
     /**
      * Test Construct
+     * @throws Exception
      */
     public function testConstruct()
     {
@@ -36,6 +38,7 @@ class ConfigTest extends BaseTest
 
     /**
      * Test Add Directory
+     * @throws Exception
      * @return void
      */
     public function testAddDirectory()
@@ -45,6 +48,7 @@ class ConfigTest extends BaseTest
 
     /**
      * Test Clear Cache
+     * @throws Exception
      * @return void
      */
     public function testClearCache()
@@ -54,6 +58,7 @@ class ConfigTest extends BaseTest
 
     /**
      * Test Get From Directory
+     * @throws Exception
      * @return void
      */
     public function testGetFromDirectory()
