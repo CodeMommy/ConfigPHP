@@ -7,16 +7,17 @@
 
 declare(strict_types=1);
 
-namespace CodeMommy\ConfigPHP\Test;
+namespace CodeMommy\Test;
 
 use Exception;
+use CodeMommy\DevelopPHP\PHPUnitBase;
 use CodeMommy\ConfigPHP\Config;
 
 /**
  * Class ConfigTest
- * @package CodeMommy\ConfigPHP\Test
+ * @package CodeMommy\Test
  */
-class ConfigTest extends BaseTest
+class ConfigTest extends PHPUnitBase
 {
     /**
      * ConfigTest constructor.
