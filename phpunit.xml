@@ -3,7 +3,6 @@
     <testsuites>
         <testsuite name="CodeMommy ConfigPHP">
             <directory suffix="Test.php">./test</directory>
-            <exclude>./test_case</exclude>
         </testsuite>
     </testsuites>
     <filter>
