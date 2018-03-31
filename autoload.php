@@ -9,10 +9,10 @@ require_once('library/Autoload.php');
 
 use CodeMommy\ConfigPHP\Library\Autoload;
 
-$autoloaDirectory = array(
+$autoloadDirectory = array(
     'library' => 'CodeMommy\\ConfigPHP\\Library',
     'interface' => 'CodeMommy\\ConfigPHP',
     'class' => 'CodeMommy\\ConfigPHP'
 );
 
-Autoload::directory($autoloaDirectory);
+Autoload::directory($autoloadDirectory);
